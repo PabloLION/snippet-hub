@@ -1,45 +1,122 @@
 {
   "name": "snippethub",
-	"displayName": "Snippet Hub",
-	"description": "Share, find, rate VS Code Snippets.",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.60.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-        "onCommand:snippethub.helloWorld"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "snippethub.helloWorld",
-				"title": "Hello World"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "yarn run compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.60.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.2.2",
-		"@types/node": "14.x",
-		"eslint": "^7.27.0",
-		"@typescript-eslint/eslint-plugin": "^4.26.0",
-		"@typescript-eslint/parser": "^4.26.0",
-		"glob": "^7.1.7",
-		"mocha": "^8.4.0",
-		"typescript": "^4.3.2",
-		"vscode-test": "^1.5.2"
-	}
+  "displayName": "Snippet Hub",
+  "description": "Share, find, rate VS Code Snippets.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:snippethub.helloWorld",
+    "onCommand:snippethub.saveSelected",
+    "onCommand:snippethub.shareSelected",
+    "onCommand:snippethub.previewSnippet",
+    "onCommand:snippethub.enhanceSnippetEditor"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "snippethub.helloWorld",
+        "title": "Hello World",
+        "category": "SnippetHub"
+      },
+      {
+        "command": "snippethub.enhanceSnippetEditor",
+        "title": "Open with Enhanced Snippet Editor(ONLY IN .code-snippet)",
+        "category": "SnippetHub",
+        "icon": "$(book)"
+      },
+      {
+        "command": "snippethub.saveSelected",
+        "title": "Save Selected as Snippet",
+        "category": "SnippetHub"
+      },
+      {
+        "command": "snippethub.shareSelected",
+        "title": "Share Selected as Snippet",
+        "category": "SnippetHub"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceLangId == snippet",
+          "command": "snippethub.enhanceSnippetEditor",
+          "group": "navigation"
+        }
+      ],
+      "editor/title": [
+        {
+          "when": "editorLangId == jsonc || editorLangId == snippets && resourceScheme != enhanced-snippet-editor",
+          "command": "snippethub.enhanceSnippetEditor",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "when": "resourceLangId == snippet && resourceScheme != enhanced-snippet-editor",
+          "command": "snippethub.enhanceSnippetEditor",
+          "group": "navigation"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "snippets",
+        "extensions": [
+          ".code-snippets"
+        ],
+        "aliases": [
+          "snippets"
+        ]
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "snippet-hub",
+          "title": "SnippetHub",
+          "icon": "$(symbol-snippet)"
+        }
+      ]
+    },
+    "views": {
+      "snippet-hub": [
+        {
+          "id": "explore-snippets",
+          "name": "Explore Snippets"
+        },
+        {
+          "id": "manage-snippets",
+          "name": "Manage Snippets",
+          "contextualTitle": "contextualTitle"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "eslint": "^7.27.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  }
 }

@@ -1,26 +1,55 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
+import { isSnippetsFile } from "./util";
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "snippethub" is now active!');
+  startUpGreeting();
+  registerCommands(context);
+}
+export function deactivate() {}
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('snippethub.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Snippet Hub!');
-	});
+type SnippetHubCommandName =
+  | "helloWorld"
+  | "shareSelected"
+  | "saveSelected"
+  | "enhanceSnippetEditor"
+  | "previewSnippet";
+/* real content */
+const snippethub_commands: {
+  [cmdName in SnippetHubCommandName]: (param: any) => any;
+} = {
+  helloWorld: () => {
+    vscode.window.showInformationMessage("Hello World from Snippet Hub!");
+  },
+  saveSelected: () => {
+    vscode.window.showInformationMessage("Command Unavailable right now");
+  },
+  shareSelected: () => {
+    vscode.window.showInformationMessage("Command Unavailable right now");
+  },
+  previewSnippet: () => {
+    vscode.window.showInformationMessage("Command Unavailable right now");
+  },
+  enhanceSnippetEditor: () => {
+    const editor = vscode.window.activeTextEditor ?? null;
+    if (editor === null) {
+      return vscode.window.showErrorMessage("No active editor.");
+    }
+    isSnippetsFile(editor.document);
+    vscode.window.showInformationMessage("WIP");
+  },
+};
 
-	context.subscriptions.push(disposable);
+function startUpGreeting() {
+  console.log('Congratulations, your extension "snippethub" is now active!');
 }
 
-// this method is called when your extension is deactivated
-export function deactivate() {}
+function registerCommands(context: vscode.ExtensionContext) {
+  const toRegister = Object.entries(snippethub_commands).map(
+    ([cmdName, func]) => {
+      return vscode.commands.registerCommand(`snippethub.${cmdName}`, func);
+    }
+  );
+
+  context.subscriptions.push(...toRegister);
+  ``;
+}
