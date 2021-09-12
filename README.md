@@ -1,20 +1,39 @@
-# snippethub README
+## SnippetHub
 
-This is the README for your extension "snippethub". After writing up a brief description, we recommend including the following sections.
+Consider using a image header.
+
+## What's new in SnippetHub 1.0
+
+- Manage your snippets with improved UI.
+- Search in snippets market place.
+
+## Donations and pricing
+
+- Free for personal users.
+
+## SnippetHub
+
+- Like NPM/PIP, but manage your snippets.
+- This is a template README.
+- Manage your snippets with improved UI.
+- Search in snippets market place.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Available commands
 
-For example if there is an image subfolder under your extension project workspace:
+- **Save as snippet** Save snippet from selection.
 
-\!\[feature X\]\(images/feature-x.png\)
+### New language ID.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Give `.code-snippet` a new language ID: `snippets`.
+- Syntax highlighting for `snippets`.
+
+\!\[feature X\]\(images/feature-x.GIF\)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Visual Studio Code
 
 ## Extension Settings
 
@@ -24,8 +43,8 @@ For example:
 
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+- `myExtension.enable`: enable/disable this extension
+- `myExtension.thing`: set to `blah` to do something
 
 ## Known Issues
 
@@ -35,36 +54,12 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 Users appreciate release notes as you update your extension.
 
-### 1.0.0
+### 0.1.0
 
-Initial release of ...
+Initial release to market
 
-### 1.0.1
+## License
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+NON-COMMERCIAL Thing...
 
 **Enjoy!**
