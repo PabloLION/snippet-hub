@@ -71,8 +71,16 @@
           ".code-snippets"
         ],
         "aliases": [
-          "snippets"
-        ]
+          "code-snippets"
+        ],
+        "configuration": "./snippets-language/snippets-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "snippets",
+        "scopeName": "source.snippets",
+        "path": "./snippets-language/snippets.tmLanguage.json"
       }
     ],
     "viewsContainers": {

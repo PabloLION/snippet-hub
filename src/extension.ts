@@ -35,7 +35,7 @@ const snippethub_commands: {
       return vscode.window.showErrorMessage("No active editor.");
     }
     isSnippetsFile(editor.document);
-    vscode.window.showInformationMessage("WIP");
+    vscode.window.showInformationMessage("");
   },
 };
 
