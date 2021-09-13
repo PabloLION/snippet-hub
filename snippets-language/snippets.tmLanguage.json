@@ -76,6 +76,10 @@
       "match": "\\b(?:true|false|null)\\b",
       "name": "constant.language.json.comments"
     },
+    "variable": {
+      "match": "[$]({)?([0-9]+)?(?(2)|(?:TM_SELECTED_TEXT|TM_CURRENT_LINE|TM_CURRENT_WORD|TM_LINE_INDEX|TM_LINE_NUMBER|TM_FILENAME_BASE|TM_FILENAME|TM_DIRECTORY|TM_FILEPATH|RELATIVE_FILEPATH|CLIPBOARD|WORKSPACE_NAME|WORKSPACE_FOLDER|CURRENT_YEAR_SHORT|CURRENT_YEAR|CURRENT_MONTH_NAME_SHORT|CURRENT_MONTH_NAME|CURRENT_MONTH|CURRENT_DATE|CURRENT_DAY_NAME_SHORT|CURRENT_DAY_NAME|CURRENT_HOUR|CURRENT_MINUTE|CURRENT_SECONDS_UNIX|CURRENT_SECOND|RANDOM|RANDOM_HEX|UUID|BLOCK_COMMENT_START|BLOCK_COMMENT_END|LINE_COMMENT))(?(1)(?(2)[:].+|[/].+[/].*[/])})",
+      "name": "variable.language.snippets"
+    },
     "number": {
       "match": "(?x)        # turn on extended mode\n  -?        # an optional minus\n  (?:\n    0       # a zero\n    |       # ...or...\n    [1-9]   # a 1-9 character\n    \\d*     # followed by zero or more digits\n  )\n  (?:\n    (?:\n      \\.    # a period\n      \\d+   # followed by one or more digits\n    )?\n    (?:\n      [eE]  # an e character\n      [+-]? # followed by an option +/-\n      \\d+   # followed by one or more digits\n    )?      # make exponent optional\n  )?        # make decimal portion optional",
       "name": "constant.numeric.json.comments"
@@ -149,7 +153,7 @@
       "name": "string.quoted.double.json.comments",
       "patterns": [
         {
-          "include": "#stringcontent"
+          "include": "#variable"
         }
       ]
     },
