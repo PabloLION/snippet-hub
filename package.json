@@ -65,23 +65,13 @@
         }
       ]
     },
-    "languages": [
-      {
-        "id": "snippet",
-        "extensions": [
-          ".code-snippets"
-        ],
-        "aliases": [
-          "snippet"
-        ],
-        "configuration": "./snippets-language/snippets-language-configuration.json"
-      }
-    ],
     "grammars": [
       {
-        "language": "snippet",
-        "scopeName": "source.snippets",
-        "path": "./snippets-language/snippets.tmLanguage.json"
+        "scopeName": "keyword.language.snippet",
+        "path": "./snippets-language/snippets.injection.json",
+        "injectTo": [
+          "source.json.comments"
+        ]
       }
     ],
     "viewsContainers": {
