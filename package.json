@@ -13,7 +13,11 @@
     "create snippet",
     "snippets"
   ],
-  "version": "0.1.0",
+  "version": "0.1.2",
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
   "publisher": "pablolion",
   "repository": {
     "type": "git",
@@ -26,9 +30,6 @@
   "engines": {
     "vscode": "^1.60.0"
   },
-  "categories": [
-    "Other"
-  ],
   "activationEvents": [
     "onLanguage:snippet",
     "onCommand:snippethub.helloWorld",
