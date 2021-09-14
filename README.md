@@ -1,65 +1,69 @@
-## SnippetHub
+# SnippetHub
 
-Consider using a image header.
+- [ ] TODO: (GIF) image header.
 
-## What's new in SnippetHub 1.0
+## What's new in SnippetHub 0.1
 
-- Manage your snippets with improved UI.
-- Search in snippets market place.
+- Syntax Highlighting in `.code-snippets` file.
+  ![Syntax Highlighting](.github\IMG\v0.1-feature.png)
+- Add a button for `.code-snippets` file.
 
 ## Donations and pricing
 
 - Free for personal users.
 
-## SnippetHub
+## Installation Instructions
 
-- Like NPM/PIP, but manage your snippets.
-- This is a template README.
-- Manage your snippets with improved UI.
-- Search in snippets market place.
+- Requirements: Visual Studio Code
 
 ## Features
 
+- Syntax Highlighting in `.code-snippets` file.
+
 ### Available commands
 
-- **Save as snippet** Save snippet from selection.
+None
 
-### New language ID.
-
-- Give `.code-snippet` a new language ID: `snippets`.
-- Syntax highlighting for `snippets`.
-
-\!\[feature X\]\(images/feature-x.GIF\)
-
-## Requirements
-
-- Visual Studio Code
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
+### Settings
 
 This extension contributes the following settings:
 
+- No settings available yet.
+
+<!-- Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+
 - `myExtension.enable`: enable/disable this extension
-- `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- `myExtension.thing`: set to `blah` to do something -->
 
 ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
-### 0.1.0
+### 0.1
 
 Initial release to market
 
+## Plan
+
+### Big picture
+
+- Like NPM/PIP to manage user snippets.
+
+### Planned features
+
+- Manage your snippets with improved UI.
+- `command` **Save as snippet** Save snippet from selection.
+- Search in snippets market.
+- New language ID.
+  - Give `.code-snippet` a new language ID: `snippets`.
+  - Syntax highlighting for `snippets`.
+
+### Known Issues
+
+- None
+
 ## License
 
-NON-COMMERCIAL Thing...
+NON-COMMERCIAL Thing.
 
 **Enjoy!**
