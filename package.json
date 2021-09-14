@@ -1,8 +1,28 @@
 {
   "name": "snippethub",
   "displayName": "Snippet Hub",
-  "description": "Share, find, rate VS Code Snippets.",
-  "version": "0.0.1",
+  "description": "Share, find and rate Code Snippets.",
+  "keywords": [
+    "snippet market",
+    "snippet store",
+    "snippet manager",
+    "snippet editor",
+    "share snippet",
+    "find snippet",
+    "edit snippet",
+    "create snippet",
+    "snippets"
+  ],
+  "version": "0.1.0",
+  "publisher": "pablolion",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pablion/snippet-hub"
+  },
+  "bugs": {
+    "url": "https://github.com/Pablion/snippet-hub/issues"
+  },
+  "homepage": "https://github.com/Pablion/snippet-hub#readme",
   "engines": {
     "vscode": "^1.60.0"
   },

@@ -1,3 +1,4 @@
+// THIS FILE IS NEVER USED.
 // jsonLangServer.ts of [snippethub], at 210914
 // adopted from https://github.com/microsoft/vscode/blob/main/src/vs/workbench/contrib/snippets/browser/snippets.contribution.ts
 import { IJSONSchemaMap } from "vscode-json-schema";
