@@ -4,6 +4,7 @@ import { isSnippetsFile } from "./util";
 export function activate(context: vscode.ExtensionContext) {
   startUpGreeting();
   registerCommands(context);
+  registerFormatter();
 }
 export function deactivate() {}
 
@@ -12,22 +13,31 @@ type SnippetHubCommandName =
   | "shareSelected"
   | "saveSelected"
   | "enhanceSnippetEditor"
-  | "previewSnippet";
+  | "previewSnippet"
+  | "formatSnippet";
 /* real content */
 const snippethub_commands: {
   [cmdName in SnippetHubCommandName]: (param: any) => any;
 } = {
   helloWorld: () => {
-    vscode.window.showInformationMessage("Hello World from Snippet Hub!");
+    return vscode.window.showInformationMessage(
+      "Hello World from Snippet Hub!"
+    );
   },
   saveSelected: () => {
-    vscode.window.showInformationMessage("Command Unavailable right now");
+    return vscode.window.showInformationMessage(
+      "Command Unavailable right now"
+    );
   },
   shareSelected: () => {
-    vscode.window.showInformationMessage("Command Unavailable right now");
+    return vscode.window.showInformationMessage(
+      "Command Unavailable right now"
+    );
   },
   previewSnippet: () => {
-    vscode.window.showInformationMessage("Command Unavailable right now");
+    return vscode.window.showInformationMessage(
+      "Command Unavailable right now"
+    );
   },
   enhanceSnippetEditor: () => {
     const editor = vscode.window.activeTextEditor ?? null;
@@ -35,7 +45,12 @@ const snippethub_commands: {
       return vscode.window.showErrorMessage("No active editor.");
     }
     isSnippetsFile(editor.document);
-    vscode.window.showInformationMessage("WIP");
+    return vscode.window.showInformationMessage("");
+  },
+  formatSnippet: () => {
+    return vscode.window.showInformationMessage(
+      "Please use registerDocumentFormattingEditProvider."
+    );
   },
 };
 
@@ -44,12 +59,32 @@ function startUpGreeting() {
 }
 
 function registerCommands(context: vscode.ExtensionContext) {
-  const toRegister = Object.entries(snippethub_commands).map(
+  const disposables = Object.entries(snippethub_commands).map(
     ([cmdName, func]) => {
       return vscode.commands.registerCommand(`snippethub.${cmdName}`, func);
     }
   );
 
-  context.subscriptions.push(...toRegister);
+  context.subscriptions.push(...disposables);
   ``;
+}
+
+function registerFormatter() {
+  console.log("formatter registering");
+  vscode.languages.registerDocumentFormattingEditProvider("snippet", {
+    provideDocumentFormattingEdits(
+      document: vscode.TextDocument
+    ): vscode.TextEdit[] {
+      const firstLine = document.lineAt(0);
+      {
+        return [
+          vscode.TextEdit.insert(
+            firstLine.range.start,
+            "// this is snippet lang \n"
+          ),
+        ];
+      }
+    },
+  });
+  console.log("formatter registered");
 }

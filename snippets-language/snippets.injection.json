@@ -1,0 +1,16 @@
+{
+  "information_for_contributors": [
+    "This file has been converted from https://github.com/microsoft/vscode/blob/main/extensions/json/syntaxes/JSONC.tmLanguage.json"
+  ],
+  "version": "https://github.com/microsoft/vscode-JSON.tmLanguage/commit/9bd83f1c252b375e957203f21793316203f61f70",
+  "name": "code-snippets-injection",
+  "scopeName": "keyword.language.snippet",
+  "injectionSelector": "L:string.quoted.double.json.comments",
+  "patterns": [{ "include": "#keyword" }],
+  "repository": {
+    "keyword": {
+      "name": "keyword.language.snippet",
+      "match": "[$]({)?([0-9]+)?(?(2)|(?:TM_SELECTED_TEXT|TM_CURRENT_LINE|TM_CURRENT_WORD|TM_LINE_INDEX|TM_LINE_NUMBER|TM_FILENAME_BASE|TM_FILENAME|TM_DIRECTORY|TM_FILEPATH|RELATIVE_FILEPATH|CLIPBOARD|WORKSPACE_NAME|WORKSPACE_FOLDER|CURRENT_YEAR_SHORT|CURRENT_YEAR|CURRENT_MONTH_NAME_SHORT|CURRENT_MONTH_NAME|CURRENT_MONTH|CURRENT_DATE|CURRENT_DAY_NAME_SHORT|CURRENT_DAY_NAME|CURRENT_HOUR|CURRENT_MINUTE|CURRENT_SECONDS_UNIX|CURRENT_SECOND|RANDOM|RANDOM_HEX|UUID|BLOCK_COMMENT_START|BLOCK_COMMENT_END|LINE_COMMENT))(?(1)(?(2)[:].+|[/].+[/].*[/])})"
+    }
+  }
+}
